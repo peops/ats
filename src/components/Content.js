@@ -1,270 +1,52 @@
 import React, {Component} from 'react';
+import Summary from './Summary';
+import Tabs from './Tabs'
 
-export default class Content extends Component {
+export default class Main extends Component {
+    candisummary = [
+                {n:"1", title:"New Candidates", number:"5", measure:"Applcants", color:"small-box bg-aqua", icon:"ion ion-bag"},
+                {n:"2", title:"Candidates Responded", number:"2", measure:"Applicants", color:"small-box bg-green", icon:"ion ion-stats-bars"},
+                {n:"3", title:"Waiting for Actions", number:"5", measure:"Tasks", color:"small-box bg-yellow", icon:"ion ion-person-add"},
+                {n:"4", title:"Tasks", number:"3", measure:"Tasks", color:"small-box bg-red", icon:"ion ion-pie-graph"}
+            ];
+
+    headings = [
+                {state:"active", tabname:"1", heading:"Feedback Due"}, 
+                {state:"", tabname:"2", heading:"Today"},
+                {state:"", tabname:"3", heading:"Upcoming"},
+                {state:"", tabname:"4", heading:"Completed"}
+
+            ]
+    tbody = [
+                {candidate:"Ankit", info:"Stud", schedule:"Anytime", remarks:"Le le"},
+                {candidate:"Ankit", info:"Stud", schedule:"Anytime", remarks:"Le le"},
+                {candidate:"Ankit", info:"Stud", schedule:"Anytime", remarks:"Le le"}
+            ];
+    contents = [
+                {state:"active", tabname:"1", theading:this.theading, tbody:this.tbody},
+                {state:"", tabname:"1", tbody:this.tbody},
+                {state:"", tabname:"1", tbody:this.tbody},
+                {state:"", tabname:"1", tbody:this.tbody}
+            ]
     render(){
         return (
-            <div className="content-wrapper">
-                <section className="content-header">
-                    <span class="heading"> Candidates Summary</span>
-                    <div class='cardcontainer'>
-                      <div class='card carda'>
-                        <div class='inner'>
-                          <div class='title'>
-                            <div class='text'>New Candidates</div>
-                          </div>
-                          <div class='number'>22</div>
-                          <div class='measure'></div>
-                        </div>
-                      </div>
-                      <div class='card cardb'>
-                        <div class='inner'>
-                          <div class='title'>
-                            <div class='text'>Candidates Responded</div>
-                          </div>
-                          <div class='number'>45</div>
-                          <div class='measure'></div>
-                        </div>
-                      </div>
-                      <div class='card cardc'>
-                        <div class='inner'>
-                          <div class='title'>
-                            <div class='text'>Waiting For Action</div>
-                          </div>
-                          <div class='number'>45</div>
-                          <div class='measure'></div>
-                        </div>
-                      </div>
-                      <div class='card cardd'>
-                        <div class='inner'>
-                          <div class='title'>
-                            <div class='text'>Due Tasks</div>
-                          </div>
-                          <div class='number'>45</div>
-                          <div class='measure'></div>
-                        </div>
-                      </div>
-                    </div>
+                <div className="content-wrapper">
+                <section class="content-header">
+                    <h1>
+                    <span class='small'>
+                    Dashboard
+                    </span>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li class="active">Dashboard</li>
+                    </ol>
                 </section>
-                <section className="content-header">
-                    <div class="tablecontainer">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <span class="heading"> Schedule </span>
-                                <div class="tabbable-panel">
-                                    <div class="tabbable-line">
-                                        <ul class="nav nav-tabs ">
-                                            <li class="active">
-                                                <a href="#tab_default_1" data-toggle="tab">
-                                                Feedback Due </a>
-                                            </li>
-                                            <li>
-                                                <a href="#tab_default_2" data-toggle="tab">
-                                                Today </a>
-                                            </li>
-                                            <li>
-                                                <a href="#tab_default_3" data-toggle="tab">
-                                                Upcoming </a>
-                                            </li>
-                                            <li>
-                                                <a href="#tab_default_4" data-toggle="tab">
-                                                Completed </a>
-                                            </li>
-                                        </ul>
-                                        <div class="tab-content">
-                                            <div class="tab-pane active" id="tab_default_1">
-
-                                                <div class="panel panel-primary filterable">
-                                                    <table class="table">
-                                                        <thead  class="blue-grey lighten-4">
-                                                            <tr class="filters">
-                                                                <th>Candidate</th>
-                                                                <th>Interviewer</th>
-                                                                <th>Schedule Info</th>
-                                                                <th>Remarks</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>1</td>
-                                                                <td>Mark</td>
-                                                                <td>Otto</td>
-                                                                <td>@mdo</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>2</td>
-                                                                <td>Jacob</td>
-                                                                <td>Thornton</td>
-                                                                <td>@fat</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>3</td>
-                                                                <td>Larry</td>
-                                                                <td>the Bird</td>
-                                                                <td>@twitter</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-
-                                            </div>
-                                            <div class="tab-pane" id="tab_default_2">
-                                                
-                                                <div class="panel panel-primary filterable">
-                                                    <table class="table">
-                                                        <thead  class="blue-grey lighten-4">
-                                                            <tr class="filters">
-                                                                <th>Candidate</th>
-                                                                <th>Interviewer</th>
-                                                                <th>Schedule Info</th>
-                                                                <th>Remarks</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>1</td>
-                                                                <td>Mark</td>
-                                                                <td>Otto</td>
-                                                                <td>@mdo</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>2</td>
-                                                                <td>Jacob</td>
-                                                                <td>Thornton</td>
-                                                                <td>@fat</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>3</td>
-                                                                <td>Larry</td>
-                                                                <td>the Bird</td>
-                                                                <td>@twitter</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-
-                                            </div>
-                                            <div class="tab-pane" id="tab_default_3">
-                                                
-                                                <div class="panel panel-primary filterable">
-                                                    <table class="table">
-                                                        <thead  class="blue-grey lighten-4">
-                                                            <tr class="filters">
-                                                                <th>Candidate</th>
-                                                                <th>Interviewer</th>
-                                                                <th>Schedule Info</th>
-                                                                <th>Remarks</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>1</td>
-                                                                <td>Mark</td>
-                                                                <td>Otto</td>
-                                                                <td>@mdo</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>2</td>
-                                                                <td>Jacob</td>
-                                                                <td>Thornton</td>
-                                                                <td>@fat</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>3</td>
-                                                                <td>Larry</td>
-                                                                <td>the Bird</td>
-                                                                <td>@twitter</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-
-                                            </div>
-                                            <div class="tab-pane" id="tab_default_3">
-                                                
-                                                <div class="panel panel-primary filterable">
-                                                    <table class="table">
-                                                        <thead  class="blue-grey lighten-4">
-                                                            <tr class="filters">
-                                                                <th>Candidate</th>
-                                                                <th>Interviewer</th>
-                                                                <th>Schedule Info</th>
-                                                                <th>Remarks</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>1</td>
-                                                                <td>Mark</td>
-                                                                <td>Otto</td>
-                                                                <td>@mdo</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>2</td>
-                                                                <td>Jacob</td>
-                                                                <td>Thornton</td>
-                                                                <td>@fat</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>3</td>
-                                                                <td>Larry</td>
-                                                                <td>the Bird</td>
-                                                                <td>@twitter</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <section class="content">
+                    <Summary cards={this.candisummary} />
+                    <Tabs headings={this.headings} contents={this.contents} />
                 </section>
-                <section className="content-header">
-                    <span class="heading"> Offer to hire - Highlights - Last 30 Days</span>
-                    <div class='cardcontainer'>
-                      <div class='card carda'>
-                        <div class='inner'>
-                          <div class='title'>
-                            <div class='text'>Offers Made</div>
-                          </div>
-                          <div class='number'>22</div>
-                          <div class='measure'></div>
-                        </div>
-                      </div>
-                      <div class='card cardb'>
-                        <div class='inner'>
-                          <div class='title'>
-                            <div class='text'>Offers Accepted</div>
-                          </div>
-                          <div class='number'>45</div>
-                          <div class='measure'></div>
-                        </div>
-                      </div>
-                      <div class='card cardc'>
-                        <div class='inner'>
-                          <div class='title'>
-                            <div class='text'>Offers Declined</div>
-                          </div>
-                          <div class='number'>45</div>
-                          <div class='measure'></div>
-                        </div>
-                      </div>
-                      <div class='card cardd'>
-                        <div class='inner'>
-                          <div class='title'>
-                            <div class='text'>New Joinees</div>
-                          </div>
-                          <div class='number'>45</div>
-                          <div class='measure'></div>
-                        </div>
-                      </div>
-                    </div>
-                </section>
-
-            </div>
+                </div>
         )
     }
 }
